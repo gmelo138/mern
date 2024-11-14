@@ -7,13 +7,13 @@ const app = express();
 connectDB();
 
 // Route files
-const [entity]Routes = require('./routes/[entity]Routes');
+const authRoutes = require('./routes/authRoutes');
 
 app.use(cors());
 app.use(express.json());
 
 // Mount routers
-app.use('/api/v1/users', [entity]Routes);
+app.use('/api/v1/auth', authRoutes);
 
 app.use(errorHandler);
 
